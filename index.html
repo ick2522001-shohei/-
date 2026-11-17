@@ -399,11 +399,12 @@
       background: #d6e4e8;
     }
 
-    .card-art::before,
     .card-art::after {
       position: absolute;
+      z-index: 1;
+      inset: 0;
       content: "";
-      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(16, 59, 74, .2), transparent 42%, rgba(16, 59, 74, .08));
     }
 
     .art-wetland { background: #c9e0e4; }
@@ -424,12 +425,20 @@
     .card-copy { display: block; padding: 24px 25px 28px; }
 
     .card-number {
-      display: block;
-      margin-bottom: 9px;
-      color: var(--coral);
-      font-family: var(--serif);
-      font-size: 12px;
+      position: absolute;
+      z-index: 2;
+      top: 14px;
+      left: 14px;
+      padding: 5px 9px;
+      border: 1px solid rgba(242, 246, 248, .38);
+      border-radius: 999px;
+      background: rgba(16, 59, 74, .78);
+      color: var(--paper);
+      font-size: 9px;
+      font-weight: 700;
       letter-spacing: .12em;
+      line-height: 1.4;
+      backdrop-filter: blur(8px);
     }
 
     .card-title {
@@ -576,11 +585,14 @@
     }
 
     .route-time {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--coral);
-      font-family: var(--serif);
-      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 7px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(20, 118, 125, .1);
+      color: var(--green);
+      font-size: 9px;
+      font-weight: 700;
       letter-spacing: .08em;
     }
 
@@ -824,9 +836,9 @@
             <summary class="feature-summary">
               <span class="card-art art-wetland">
                 <img class="card-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT152QFP_2qkkjqSai1ZvAei4ngoU_sNR8-kY9dSCF83Q&amp;s=10" alt="谷津干潟の風景" loading="lazy">
+                <span class="card-number">01 / NATURE</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">01 / NATURE</span>
                 <span class="card-title" role="heading" aria-level="3">谷津干潟</span>
                 <span class="card-description">東京湾の奥に広がる、渡り鳥たちの大切な休息地。ラムサール条約に登録された湿地で、季節ごとの自然を観察できます。</span>
                 <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
@@ -841,9 +853,9 @@
             <summary class="feature-summary">
               <span class="card-art art-town">
                 <img class="card-photo" src="https://donnatoko.jp/wp-content/uploads/2026/08/Yatsu-Higata-Nature-Observation-Center.jpg" alt="谷津干潟自然観察センター" loading="lazy">
+                <span class="card-number">02 / WALK</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">02 / WALK</span>
                 <span class="card-title" role="heading" aria-level="3">習志野さんぽ</span>
                 <span class="card-description">駅前のにぎわいから水辺や緑へ。谷津干潟の遊歩道や、谷津の街並みを歩いてみましょう。</span>
                 <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
@@ -859,9 +871,9 @@
             <summary class="feature-summary">
               <span class="card-art art-food">
                 <img class="card-photo" src="https://tshop.r10s.jp/ryousouya/cabinet/4060/ns-07.jpg?fitin=720%3A720" alt="習志野ソーセージ" loading="lazy">
+                <span class="card-number">03 / LOCAL FOOD</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">03 / LOCAL FOOD</span>
                 <span class="card-title" role="heading" aria-level="3">習志野ソーセージ</span>
                 <span class="card-description">ドイツとの歴史的なゆかりから生まれた、習志野のご当地グルメ。街を訪れたら、地元の味もぜひ楽しんでみてください。</span>
                 <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
@@ -877,9 +889,9 @@
             <summary class="feature-summary">
               <span class="card-art">
                 <img class="card-photo" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Rose_Garden_Yatsu.jpg/500px-Rose_Garden_Yatsu.jpg" alt="谷津バラ園に咲くバラ" loading="lazy">
+                <span class="card-number">04 / FLOWERS</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">04 / FLOWERS</span>
                 <span class="card-title" role="heading" aria-level="3">谷津バラ園</span>
                 <span class="card-description">世界各国のバラ約800種、7,500株が咲く庭園。春と秋、それぞれ違う表情の花を楽しめます。</span>
                 <span class="photo-credit">写真：t-mizo / CC BY 2.0</span>
@@ -897,9 +909,9 @@
             <summary class="feature-summary">
               <span class="card-art">
                 <img class="card-photo" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Akitsu20040102.jpg/960px-Akitsu20040102.jpg" alt="秋津公園のサッカー場" loading="lazy">
+                <span class="card-number">05 / PARK</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">05 / PARK</span>
                 <span class="card-title" role="heading" aria-level="3">秋津公園</span>
                 <span class="card-description">野球場・サッカー場・テニスコートがそろう、海辺に近い広々とした公園です。</span>
                 <span class="photo-credit">写真：WAKA77 / Public domain</span>
@@ -917,9 +929,9 @@
             <summary class="feature-summary">
               <span class="card-art">
                 <img class="card-photo" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Cradle_place_stele_Yomiuri_Giants.jpg/960px-Cradle_place_stele_Yomiuri_Giants.jpg" alt="谷津公園にある読売巨人軍発祥の地の碑" loading="lazy">
+                <span class="card-number">06 / HISTORY</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">06 / HISTORY</span>
                 <span class="card-title" role="heading" aria-level="3">巨人軍発祥の地</span>
                 <span class="card-description">谷津公園には、読売巨人軍の誕生につながる谷津球場の歴史を伝える記念碑があります。</span>
                 <span class="photo-credit">写真：Namazu-tron / CC BY-SA 3.0</span>
@@ -937,9 +949,9 @@
             <summary class="feature-summary">
               <span class="card-art">
                 <img class="card-photo" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Flickr_-_Official_U.S._Navy_Imagery_-_U.S._7th_Fleet_Orient_Express_Brass_Band_performs_during_a_free_concert_in_Yokohama%2C_Japan..jpg/960px-Flickr_-_Official_U.S._Navy_Imagery_-_U.S._7th_Fleet_Orient_Express_Brass_Band_performs_during_a_free_concert_in_Yokohama%2C_Japan..jpg" alt="ブラスバンドの演奏風景（イメージ）" loading="lazy">
+                <span class="card-number">07 / MUSIC</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">07 / MUSIC</span>
                 <span class="card-title" role="heading" aria-level="3">音楽のまち</span>
                 <span class="card-description">学校や地域で音楽活動が盛ん。コンサートや発表会など、街のあちこちで音に出会えます。</span>
                 <span class="photo-credit">写真：MC2 Devon Dow / U.S. Navy Public domain（イメージ）</span>
@@ -957,9 +969,9 @@
             <summary class="feature-summary">
               <span class="card-art">
                 <img class="card-photo" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/%E3%81%82%E3%82%93%E3%81%B0%E6%A7%98.JPG" alt="習志野市の伝統行事「あんば様」" loading="lazy">
+                <span class="card-number">08 / FESTIVAL</span>
               </span>
               <span class="card-copy">
-                <span class="card-number">08 / FESTIVAL</span>
                 <span class="card-title" role="heading" aria-level="3">祭りと季節の催し</span>
                 <span class="card-description">市民まつり「習志野きらっと」や、菊田神社で受け継がれる「あんば様」など、地域の祭りも魅力です。</span>
                 <span class="photo-credit">写真：Shinmaebashi / CC BY-SA 3.0</span>
