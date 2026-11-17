@@ -401,6 +401,19 @@
       background: var(--paper);
     }
 
+    .feature-summary {
+      display: block;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .feature-summary::-webkit-details-marker { display: none; }
+
+    .feature-summary:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: -3px;
+    }
+
     .card-art {
       position: relative;
       display: grid;
@@ -430,9 +443,10 @@
 
     .art-food { background: #f0dfc7; }
 
-    .card-copy { padding: 26px 26px 30px; }
+    .card-copy { display: block; padding: 26px 26px 30px; }
 
     .card-number {
+      display: block;
       margin-bottom: 9px;
       color: var(--coral);
       font-family: var(--serif);
@@ -440,7 +454,8 @@
       letter-spacing: .12em;
     }
 
-    .card-copy h3 {
+    .card-title {
+      display: block;
       margin-bottom: 11px;
       font-family: var(--serif);
       font-size: 21px;
@@ -448,7 +463,39 @@
       letter-spacing: .06em;
     }
 
-    .card-copy p {
+    .card-description {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .detail-action {
+      display: block;
+      margin-top: 16px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .detail-open { display: none; }
+    .feature-card[open] .detail-closed { display: none; }
+    .feature-card[open] .detail-open { display: inline; }
+
+    .feature-detail {
+      padding: 18px 26px 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-detail h4 {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 16px;
+      letter-spacing: .04em;
+    }
+
+    .feature-detail p {
       margin-bottom: 0;
       color: var(--muted);
       font-size: 12px;
@@ -597,10 +644,11 @@
       }
       .section-heading > p { margin: 0; }
       .feature-grid { grid-template-columns: 1fr; gap: 16px; }
-      .feature-card { display: grid; grid-template-columns: .8fr 1.2fr; }
+      .feature-summary { display: grid; grid-template-columns: .8fr 1.2fr; }
       .card-art { min-height: 210px; }
       .card-copy { align-self: center; padding: 20px; }
-      .card-copy h3 { font-size: 18px; }
+      .card-title { font-size: 18px; }
+      .feature-detail { padding: 16px 20px 20px; }
       .daytrip {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -615,7 +663,7 @@
       .site-header { width: calc(100% - 28px); }
       .brand { gap: 7px; font-size: 14px; }
       .brand-mark { width: 29px; }
-      .feature-card { grid-template-columns: .75fr 1.25fr; }
+      .feature-summary { grid-template-columns: .75fr 1.25fr; }
       .card-art { min-height: 200px; }
       .card-copy { padding: 16px; }
     }
@@ -685,36 +733,57 @@
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="card-art art-wetland">
-              <img class="card-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT152QFP_2qkkjqSai1ZvAei4ngoU_sNR8-kY9dSCF83Q&amp;s=10" alt="谷津干潟の風景" loading="lazy">
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-wetland">
+                <img class="card-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT152QFP_2qkkjqSai1ZvAei4ngoU_sNR8-kY9dSCF83Q&amp;s=10" alt="谷津干潟の風景" loading="lazy">
+              </span>
+              <span class="card-copy">
+                <span class="card-number">01 / NATURE</span>
+                <span class="card-title" role="heading" aria-level="3">谷津干潟</span>
+                <span class="card-description">東京湾の奥に広がる、渡り鳥たちの大切な休息地。ラムサール条約に登録された湿地で、季節ごとの自然を観察できます。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>渡り鳥が羽を休める水辺</h4>
+              <p>谷津干潟は東京湾の最奥部に広がるラムサール条約登録湿地です。干潟の生きものや、旅の途中に立ち寄る野鳥を観察できます。訪れる前に、谷津干潟自然観察センターの開館情報や現地の観察ルールをご確認ください。</p>
             </div>
-            <div class="card-copy">
-              <p class="card-number">01 / NATURE</p>
-              <h3>谷津干潟</h3>
-              <p>東京湾の奥に広がる、渡り鳥たちの大切な休息地。ラムサール条約に登録された湿地で、季節ごとの自然を観察できます。</p>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-town">
+                <img class="card-photo" src="https://img.i-tenpo.com/loader/contents/get?target=3n7S%2FDmHgAC2WDpqUSCbcAKHljYYA44392foYKKK4l082Tlj9CR0qDEA1HpYotx2xMKI7ybdJNgIAoIrEKYcyUPrZeqbEIz05H0UAFJ7s9zYTU%2FpR1tGrE8sC8So%2BhOVv53xTfeHOzEK4uKDz%2FIvkyM7kzRQ4%2BazX9Qd8%2BUp6oY%3D" alt="津田沼の街並み" loading="lazy">
+              </span>
+              <span class="card-copy">
+                <span class="card-number">02 / TOWN</span>
+                <span class="card-title" role="heading" aria-level="3">津田沼さんぽ</span>
+                <span class="card-description">駅前のショップやカフェをめぐりながら、街の暮らしにふれる時間。少し歩けば、落ち着いた公園や歴史ある神社にも出会えます。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>駅前から気ままに街歩き</h4>
+              <p>津田沼駅周辺には、買い物や食事を楽しめるお店が集まっています。駅前をめぐったあとは、少し足をのばして公園や神社へ。気になる場所に寄り道しながら、自分のペースで散歩を楽しめます。施設の営業時間などは訪問前にご確認ください。</p>
             </div>
-          </article>
-          <article class="feature-card">
-            <div class="card-art art-town">
-              <img class="card-photo" src="https://img.i-tenpo.com/loader/contents/get?target=3n7S%2FDmHgAC2WDpqUSCbcAKHljYYA44392foYKKK4l082Tlj9CR0qDEA1HpYotx2xMKI7ybdJNgIAoIrEKYcyUPrZeqbEIz05H0UAFJ7s9zYTU%2FpR1tGrE8sC8So%2BhOVv53xTfeHOzEK4uKDz%2FIvkyM7kzRQ4%2BazX9Qd8%2BUp6oY%3D" alt="津田沼の街並み" loading="lazy">
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-food">
+                <img class="card-photo" src="https://tshop.r10s.jp/ryousouya/cabinet/4060/ns-07.jpg?fitin=720%3A720" alt="習志野ソーセージ" loading="lazy">
+              </span>
+              <span class="card-copy">
+                <span class="card-number">03 / LOCAL FOOD</span>
+                <span class="card-title" role="heading" aria-level="3">習志野ソーセージ</span>
+                <span class="card-description">ドイツとの歴史的なゆかりから生まれた、習志野のご当地グルメ。街を訪れたら、地元の味もぜひ楽しんでみてください。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>ドイツとのつながりから生まれた味</h4>
+              <p>習志野ソーセージは、ドイツとの歴史的なつながりを背景に生まれた習志野市のご当地グルメです。市内のお店やイベントなどで出会えることがあります。販売場所や時期は異なるため、取扱店の最新情報をご確認ください。</p>
             </div>
-            <div class="card-copy">
-              <p class="card-number">02 / TOWN</p>
-              <h3>津田沼さんぽ</h3>
-              <p>駅前のショップやカフェをめぐりながら、街の暮らしにふれる時間。少し歩けば、落ち着いた公園や歴史ある神社にも出会えます。</p>
-            </div>
-          </article>
-          <article class="feature-card">
-            <div class="card-art art-food">
-              <img class="card-photo" src="https://tshop.r10s.jp/ryousouya/cabinet/4060/ns-07.jpg?fitin=720%3A720" alt="習志野ソーセージ" loading="lazy">
-            </div>
-            <div class="card-copy">
-              <p class="card-number">03 / LOCAL FOOD</p>
-              <h3>習志野ソーセージ</h3>
-              <p>ドイツとの歴史的なゆかりから生まれた、習志野のご当地グルメ。街を訪れたら、地元の味もぜひ楽しんでみてください。</p>
-            </div>
-          </article>
+          </details>
         </div>
       </div>
     </section>
