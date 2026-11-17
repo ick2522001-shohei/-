@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4eb">
+  <meta name="description" content="水辺の自然と、暮らしのにぎわい。千葉県習志野市の魅力を紹介します。">
+  <title>ならしの日和 | 千葉県習志野市の小さな旅案内</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f4eb;
+      --ink: #193d39;
+      --muted: #64736a;
+      --green: #396e59;
+      --green-dark: #244b42;
+      --sky: #dcece7;
+      --coral: #d9785e;
+      --line: rgba(25, 61, 57, .16);
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 2;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1320px, calc(100% - 64px));
+      margin-inline: auto;
+      padding-block: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      color: var(--green);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: clamp(20px, 3vw, 42px);
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .site-nav a:hover { color: var(--coral); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: min(760px, 100vh);
+      min-height: min(760px, 100svh);
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 77% 31%, rgba(255,255,255,.82) 0 7%, transparent 7.3%),
+        linear-gradient(155deg, #e8eee1 0%, #dcece7 48%, #b8d5ca 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      right: -7%;
+      bottom: -28%;
+      left: -7%;
+      height: 52%;
+      content: "";
+      border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+      background: rgba(57, 110, 89, .14);
+      transform: rotate(-4deg);
+    }
+
+    .hero::after {
+      right: -14%;
+      bottom: -36%;
+      left: 34%;
+      height: 48%;
+      background: rgba(36, 75, 66, .16);
+      transform: rotate(7deg);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      align-items: center;
+      gap: 30px;
+      padding-top: 70px;
+    }
+
+    .hero-copy { max-width: 550px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
+    }
+
+    .eyebrow::before {
+      width: 32px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    .hero h1 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7vw, 84px);
+      font-weight: 500;
+      letter-spacing: .09em;
+      line-height: 1.3;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--green);
+      font-size: .45em;
+      letter-spacing: .14em;
+    }
+
+    .hero-lead {
+      max-width: 390px;
+      margin-bottom: 32px;
+      color: #435d53;
+      font-size: 14px;
+      line-height: 2.2;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--green);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    .text-link span {
+      font-size: 18px;
+      line-height: 1;
+      transition: transform .2s ease;
+    }
+
+    .text-link:hover span { transform: translateX(4px); }
+
+    .hero-art {
+      position: relative;
+      width: min(100%, 470px);
+      justify-self: end;
+      aspect-ratio: 1;
+    }
+
+    .sun {
+      position: absolute;
+      top: 5%;
+      right: 12%;
+      width: 23%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #e9b888;
+      opacity: .9;
+    }
+
+    .hero-circle {
+      position: absolute;
+      inset: 13% 4% 5% 11%;
+      overflow: hidden;
+      border-radius: 50%;
+      background: linear-gradient(165deg, #a5c9b8, #e4d7b4 60%, #9fbdac 61%);
+    }
+
+    .hero-circle::before {
+      position: absolute;
+      inset: 15% -20% auto;
+      height: 48%;
+      content: "";
+      border-radius: 50%;
+      background: #e9f1e8;
+      transform: rotate(-12deg);
+    }
+
+    .hero-circle::after {
+      position: absolute;
+      right: -10%;
+      bottom: 4%;
+      left: -10%;
+      height: 38%;
+      content: "";
+      border-radius: 50% 50% 0 0;
+      background: #5e9279;
+      transform: rotate(-8deg);
+    }
+
+    .reed {
+      position: absolute;
+      z-index: 1;
+      bottom: 19%;
+      width: 2px;
+      height: 39%;
+      border-radius: 2px;
+      background: #496e56;
+      transform-origin: bottom;
+    }
+
+    .reed::before {
+      position: absolute;
+      top: -8px;
+      left: -5px;
+      width: 12px;
+      height: 25px;
+      content: "";
+      border-radius: 50%;
+      background: #725e42;
+      transform: rotate(-18deg);
+    }
+
+    .reed-one { left: 26%; transform: rotate(-9deg); }
+    .reed-two { left: 33%; height: 47%; transform: rotate(8deg); }
+    .reed-three { left: 74%; height: 34%; transform: rotate(13deg); }
+
+    .bird {
+      position: absolute;
+      z-index: 1;
+      width: 30px;
+      height: 12px;
+      border-top: 2px solid var(--green-dark);
+      border-radius: 50%;
+      transform: rotate(12deg);
+    }
+
+    .bird::after {
+      position: absolute;
+      top: -2px;
+      left: 15px;
+      width: 25px;
+      height: 12px;
+      content: "";
+      border-top: 2px solid var(--green-dark);
+      border-radius: 50%;
+      transform: rotate(-25deg);
+    }
+
+    .bird-one { top: 36%; left: 28%; transform: scale(.8) rotate(12deg); }
+    .bird-two { top: 28%; left: 54%; transform: scale(.55) rotate(12deg); }
+
+    .art-label {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 9%;
+      display: grid;
+      width: 100px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgba(25, 61, 57, .45);
+      border-radius: 50%;
+      color: var(--green-dark);
+      font-family: var(--serif);
+      font-size: 13px;
+      line-height: 1.7;
+      text-align: center;
+      transform: rotate(9deg);
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 34px;
+      bottom: 26px;
+      z-index: 1;
+      color: rgba(25, 61, 57, .7);
+      font-size: 10px;
+      letter-spacing: .13em;
+      writing-mode: vertical-rl;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+      padding-block: 130px;
+    }
+
+    .section-label {
+      margin: 0 0 13px;
+      color: var(--coral);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 500;
+      letter-spacing: .06em;
+      line-height: 1.6;
+    }
+
+    .intro-copy {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.3;
+    }
+
+    .intro-copy p:last-child { margin-bottom: 0; }
+
+    .features {
+      padding-block: 105px 120px;
+      background: #e9ede3;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading .section-title { font-size: clamp(29px, 4vw, 40px); }
+
+    .section-heading > p {
+      max-width: 260px;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .card-art {
+      position: relative;
+      display: grid;
+      min-height: 230px;
+      overflow: hidden;
+      place-items: center;
+    }
+
+    .card-art::before,
+    .card-art::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+    }
+
+    .art-wetland { background: #d0e3d8; }
+    .art-wetland::before {
+      inset: auto -12% -43%;
+      height: 90%;
+      background: #66977e;
+    }
+    .art-wetland::after {
+      right: -10%;
+      bottom: -51%;
+      left: 30%;
+      height: 90%;
+      background: #91b9a2;
+    }
+
+    .wetland-sun {
+      position: absolute;
+      top: 18%;
+      right: 20%;
+      width: 55px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #e6ba89;
+    }
+
+    .wetland-line {
+      position: absolute;
+      z-index: 1;
+      bottom: 24%;
+      left: 13%;
+      width: 70%;
+      height: 1px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 10px 0 rgba(255, 255, 255, .45), 0 20px 0 rgba(255, 255, 255, .32);
+    }
+
+    .art-town { background: #e8d8c5; }
+    .art-town::before {
+      right: -10%;
+      bottom: -49%;
+      left: -12%;
+      height: 90%;
+      background: #c57c5c;
+    }
+    .town-building {
+      position: absolute;
+      bottom: 28%;
+      width: 26%;
+      height: 37%;
+      background: #f1e9d8;
+      box-shadow: inset 0 8px 0 #d9b795;
+    }
+    .town-building::before {
+      position: absolute;
+      top: 21%;
+      right: 15%;
+      left: 15%;
+      height: 5px;
+      content: "";
+      background: #c57c5c;
+      box-shadow: 0 16px 0 #c57c5c, 0 32px 0 #c57c5c;
+    }
+    .town-building.one { left: 21%; height: 31%; }
+    .town-building.two { left: 48%; height: 43%; width: 23%; }
+    .town-building.three { left: 72%; height: 28%; width: 16%; }
+
+    .art-food { background: #f0dfc7; }
+    .art-food::before {
+      right: 12%;
+      bottom: -31%;
+      left: 12%;
+      height: 80%;
+      background: #d8aa7b;
+    }
+    .sausage {
+      position: relative;
+      z-index: 1;
+      width: 64%;
+      height: 39px;
+      border: 3px solid #a34f39;
+      border-radius: 50px;
+      background: linear-gradient(#d98261, #be6046);
+      box-shadow: 0 7px 0 rgba(119, 62, 44, .12);
+      transform: rotate(-18deg);
+    }
+    .sausage::before,
+    .sausage::after {
+      position: absolute;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      content: "";
+      border: 2px solid #f1c29c;
+      border-radius: 50%;
+    }
+    .sausage::before { left: -7px; }
+    .sausage::after { right: -7px; }
+
+    .card-copy { padding: 26px 26px 30px; }
+
+    .card-number {
+      margin-bottom: 9px;
+      color: var(--coral);
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+
+    .card-copy h3 {
+      margin-bottom: 11px;
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: .06em;
+    }
+
+    .card-copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .daytrip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+      padding-block: 125px;
+    }
+
+    .daytrip-copy { max-width: 475px; }
+
+    .daytrip-copy > p:not(.section-label) {
+      margin-block: 20px 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2.2;
+    }
+
+    .route {
+      position: relative;
+      padding: 28px 30px;
+      border-left: 1px solid var(--line);
+    }
+
+    .route::before {
+      position: absolute;
+      top: 39px;
+      bottom: 42px;
+      left: -4px;
+      width: 7px;
+      content: "";
+      border-radius: 10px;
+      background: var(--green);
+    }
+
+    .route-stop {
+      position: relative;
+      padding-bottom: 28px;
+    }
+
+    .route-stop:last-child { padding-bottom: 0; }
+
+    .route-stop::before {
+      position: absolute;
+      top: 8px;
+      left: -35px;
+      width: 9px;
+      aspect-ratio: 1;
+      content: "";
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 1px var(--coral);
+    }
+
+    .route-time {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--coral);
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .route-stop strong {
+      font-family: var(--serif);
+      font-size: 16px;
+      letter-spacing: .05em;
+    }
+
+    .route-stop p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .closing {
+      padding: 83px 24px 88px;
+      background: var(--green-dark);
+      color: #f6f4eb;
+      text-align: center;
+    }
+
+    .closing .section-label { color: #e9b888; }
+
+    .closing h2 {
+      margin-bottom: 14px;
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 500;
+      letter-spacing: .1em;
+    }
+
+    .closing p:last-child {
+      margin-bottom: 0;
+      color: rgba(246, 244, 235, .75);
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-block: 22px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .06em;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .site-header { width: calc(100% - 40px); padding-block: 20px; }
+      .brand { font-size: 16px; }
+      .site-nav { gap: 15px; font-size: 10px; }
+      .hero { min-height: 800px; min-height: 100svh; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 104px;
+      }
+      .hero h1 { font-size: clamp(52px, 14vw, 76px); }
+      .hero-lead { max-width: 330px; font-size: 12px; }
+      .hero-art {
+        width: min(78vw, 340px);
+        margin-top: -6px;
+        margin-right: 5%;
+      }
+      .hero-note { right: 16px; bottom: 18px; }
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-block: 84px;
+      }
+      .features { padding-block: 80px; }
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .section-heading > p { margin: 0; }
+      .feature-grid { grid-template-columns: 1fr; gap: 16px; }
+      .feature-card { display: grid; grid-template-columns: .8fr 1.2fr; }
+      .card-art { min-height: 210px; }
+      .card-copy { align-self: center; padding: 20px; }
+      .card-copy h3 { font-size: 18px; }
+      .daytrip {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-block: 85px;
+      }
+      .route { margin-left: 5px; }
+      footer { flex-direction: column; gap: 4px; }
+    }
+
+    @media (max-width: 430px) {
+      .site-nav { gap: 11px; font-size: 9px; }
+      .site-header { width: calc(100% - 28px); }
+      .brand { gap: 7px; font-size: 14px; }
+      .brand-mark { width: 29px; }
+      .feature-card { grid-template-columns: .75fr 1.25fr; }
+      .card-art { min-height: 200px; }
+      .card-copy { padding: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ならしの日和 ホーム">
+      <span class="brand-mark" aria-hidden="true">N</span>
+      <span>ならしの日和</span>
+    </a>
+    <nav class="site-nav" aria-label="ページ内ナビゲーション">
+      <a href="#about">習志野のこと</a>
+      <a href="#spots">見どころ</a>
+      <a href="#daytrip">過ごし方</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">CHIBA · NARASHINO</p>
+          <h1 id="hero-title">ならしの<span>水辺と暮らしの、ちょうどいい街。</span></h1>
+          <p class="hero-lead">潮風に誘われて、鳥たちの楽園へ。<br>駅前のにぎわいを抜けた先に、思いがけない風景が待っています。</p>
+          <a class="text-link" href="#about">習志野市を知る <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" role="img" aria-label="谷津干潟をイメージした水辺と葦原のイラスト">
+          <span class="sun"></span>
+          <div class="hero-circle">
+            <span class="bird bird-one"></span>
+            <span class="bird bird-two"></span>
+            <span class="reed reed-one"></span>
+            <span class="reed reed-two"></span>
+            <span class="reed reed-three"></span>
+          </div>
+          <span class="art-label">東京湾の<br>まち歩き</span>
+        </div>
+      </div>
+      <span class="hero-note">CHIBA / JAPAN</span>
+    </section>
+
+    <section class="intro wrap" id="about">
+      <div>
+        <p class="section-label">A LITTLE INTRODUCTION</p>
+        <h2 class="section-title">自然と日常が、<br>隣り合うまち。</h2>
+      </div>
+      <div class="intro-copy">
+        <p>千葉県北西部、東京湾に面した習志野市。津田沼駅周辺の活気ある街並みから少し足をのばすと、豊かな水辺や緑に出会えます。</p>
+        <p>渡り鳥が羽を休める谷津干潟、季節の花が咲く公園、地元で親しまれる味。遠くへ行かなくても、いつもの一日を少し特別にしてくれる場所です。</p>
+      </div>
+    </section>
+
+    <section class="features" id="spots">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">FIND YOUR NARASHINO</p>
+            <h2 class="section-title">この街で、出会うもの。</h2>
+          </div>
+          <p>自然を感じる時間も、街の楽しみも。<br>習志野らしい風景をめぐってみませんか。</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="card-art art-wetland" role="img" aria-label="谷津干潟の水辺をイメージしたイラスト">
+              <span class="wetland-sun"></span>
+              <span class="wetland-line"></span>
+            </div>
+            <div class="card-copy">
+              <p class="card-number">01 / NATURE</p>
+              <h3>谷津干潟</h3>
+              <p>東京湾の奥に広がる、渡り鳥たちの大切な休息地。ラムサール条約に登録された湿地で、季節ごとの自然を観察できます。</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="card-art art-town" role="img" aria-label="習志野の街並みをイメージしたイラスト">
+              <span class="town-building one"></span>
+              <span class="town-building two"></span>
+              <span class="town-building three"></span>
+            </div>
+            <div class="card-copy">
+              <p class="card-number">02 / TOWN</p>
+              <h3>津田沼さんぽ</h3>
+              <p>駅前のショップやカフェをめぐりながら、街の暮らしにふれる時間。少し歩けば、落ち着いた公園や歴史ある神社にも出会えます。</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="card-art art-food" role="img" aria-label="習志野ソーセージをイメージしたイラスト">
+              <span class="sausage"></span>
+            </div>
+            <div class="card-copy">
+              <p class="card-number">03 / LOCAL FOOD</p>
+              <h3>習志野ソーセージ</h3>
+              <p>ドイツとの歴史的なゆかりから生まれた、習志野のご当地グルメ。街を訪れたら、地元の味もぜひ楽しんでみてください。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="daytrip wrap" id="daytrip">
+      <div class="daytrip-copy">
+        <p class="section-label">A DAY IN NARASHINO</p>
+        <h2 class="section-title">のんびり、<br>習志野を歩く一日。</h2>
+        <p>朝は水辺の空気を吸い込んで、お昼は街へ。気になるお店を見つけたら寄り道して、帰り道には今日の景色を思い出す。そんな気ままな過ごし方がおすすめです。</p>
+        <a class="text-link" href="#spots">見どころをチェック <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="route" aria-label="習志野での一日の過ごし方">
+        <div class="route-stop">
+          <span class="route-time">MORNING</span>
+          <strong>谷津干潟で自然観察</strong>
+          <p>潮の香りと鳥の声に耳をすませて。</p>
+        </div>
+        <div class="route-stop">
+          <span class="route-time">NOON</span>
+          <strong>街でランチとお買いもの</strong>
+          <p>津田沼エリアでお気に入りを探そう。</p>
+        </div>
+        <div class="route-stop">
+          <span class="route-time">AFTERNOON</span>
+          <strong>公園や神社へ寄り道</strong>
+          <p>緑の中で、ゆっくり深呼吸。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="section-label">SEE YOU IN NARASHINO</p>
+      <h2>いつもの街に、小さな発見を。</h2>
+      <p>水辺の風景も、街のにぎわいも。習志野であなたらしい時間を。</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>ならしの日和 — 千葉県習志野市の小さな旅案内</span>
+    <span>© 2026 ならしの日和</span>
+  </footer>
+</body>
+</html>
