@@ -429,36 +429,6 @@
     .art-town { background: #e8d8c5; }
 
     .art-food { background: #f0dfc7; }
-    .art-food::before {
-      right: 12%;
-      bottom: -31%;
-      left: 12%;
-      height: 80%;
-      background: #d8aa7b;
-    }
-    .sausage {
-      position: relative;
-      z-index: 1;
-      width: 64%;
-      height: 39px;
-      border: 3px solid #a34f39;
-      border-radius: 50px;
-      background: linear-gradient(#d98261, #be6046);
-      box-shadow: 0 7px 0 rgba(119, 62, 44, .12);
-      transform: rotate(-18deg);
-    }
-    .sausage::before,
-    .sausage::after {
-      position: absolute;
-      top: 10px;
-      width: 12px;
-      height: 12px;
-      content: "";
-      border: 2px solid #f1c29c;
-      border-radius: 50%;
-    }
-    .sausage::before { left: -7px; }
-    .sausage::after { right: -7px; }
 
     .card-copy { padding: 26px 26px 30px; }
 
@@ -736,8 +706,8 @@
             </div>
           </article>
           <article class="feature-card">
-            <div class="card-art art-food" role="img" aria-label="習志野ソーセージをイメージしたイラスト">
-              <span class="sausage"></span>
+            <div class="card-art art-food">
+              <img class="card-photo" src="https://tshop.r10s.jp/ryousouya/cabinet/4060/ns-07.jpg?fitin=720%3A720" alt="習志野ソーセージ" loading="lazy">
             </div>
             <div class="card-copy">
               <p class="card-number">03 / LOCAL FOOD</p>
