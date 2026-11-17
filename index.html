@@ -515,6 +515,31 @@
       text-underline-offset: 3px;
     }
 
+    .restaurant-menu summary {
+      width: fit-content;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-underline-offset: 4px;
+    }
+
+    .restaurant-menu summary:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .restaurant-menu[open] summary { margin-bottom: 8px; }
+
+    .restaurant-menu ul {
+      margin: 0;
+      padding-left: 1.4em;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
     .closing {
       padding: 83px 24px 88px;
       background: var(--green-dark);
@@ -737,7 +762,14 @@
         </div>
         <div class="route-stop">
           <span class="route-time">NOON</span>
-          <strong>StEAK TEXASでランチ</strong>
+          <details class="restaurant-menu">
+            <summary>STEAK TEXASでランチ</summary>
+            <ul aria-label="おすすめメニュー">
+              <li>テキサスリブステーキ</li>
+              <li>ガーリックライス</li>
+            </ul>
+            <p>メニューや提供状況は店舗でご確認ください。</p>
+          </details>
           <p>ステーキを楽しんだら、津田沼の街を散策。</p>
           <p>住所：〒275-0016 千葉県習志野市津田沼2-6-34<br>
             京成津田沼駅 北口から徒歩約6分<br>
