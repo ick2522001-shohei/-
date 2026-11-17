@@ -376,6 +376,88 @@
 
     .art-food { background: #f0dfc7; }
 
+    .art-rose { background: linear-gradient(155deg, #f3e5e0 0 52%, #b9cbb4 53%); }
+    .art-rose::before {
+      top: 17%;
+      left: calc(50% - 58px);
+      width: 116px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle, #e9b888 0 9%, #d9785e 10% 27%, #f2c9bd 28% 42%, #d9785e 43% 55%, transparent 56%);
+    }
+
+    .art-park { background: linear-gradient(#dce9df 0 52%, #b9d1b3 53%); }
+    .art-park::before {
+      right: -12%;
+      bottom: -48%;
+      left: -12%;
+      height: 85%;
+      background: #6f9877;
+    }
+    .art-park::after {
+      right: 12%;
+      bottom: -58%;
+      left: 32%;
+      height: 90%;
+      background: #95b998;
+    }
+
+    .art-history { background: linear-gradient(160deg, #e8dfcb, #c8d7c6); }
+    .art-history::before {
+      bottom: 17%;
+      left: calc(50% - 48px);
+      width: 96px;
+      height: 96px;
+      border: 8px solid #71846e;
+      border-radius: 50%;
+      background: #e9e1d0;
+      box-shadow: inset 0 0 0 3px #c57c5c;
+    }
+    .art-history::after {
+      right: 25%;
+      bottom: 17%;
+      left: 25%;
+      height: 5px;
+      border-radius: 0;
+      background: #71846e;
+    }
+
+    .art-music { background: linear-gradient(145deg, #e5eee7, #d6e3e9); }
+    .art-music::before {
+      top: 31%;
+      left: 28%;
+      width: 13px;
+      height: 13px;
+      background: #d9785e;
+      box-shadow: 48px -23px 0 #396e59, 96px 12px 0 #e9b888, 144px -9px 0 #396e59, 192px 18px 0 #d9785e;
+    }
+    .art-music::after {
+      top: 43%;
+      right: 22%;
+      left: 22%;
+      height: 2px;
+      border-radius: 0;
+      background: rgba(36, 75, 66, .55);
+      box-shadow: 0 14px 0 rgba(36, 75, 66, .35);
+    }
+
+    .art-festival { background: linear-gradient(145deg, #f1e4ce, #d9e7dc); }
+    .art-festival::before {
+      top: 28%;
+      left: calc(50% - 40px);
+      width: 80px;
+      height: 80px;
+      background: #d9785e;
+      box-shadow: 0 0 0 14px rgba(217, 120, 94, .18), 0 0 0 30px rgba(57, 110, 89, .12);
+    }
+    .art-festival::after {
+      top: 60%;
+      right: 13%;
+      left: 13%;
+      height: 2px;
+      border-radius: 0;
+      background: rgba(36, 75, 66, .45);
+    }
+
     .card-copy { display: block; padding: 26px 26px 30px; }
 
     .card-number {
@@ -433,6 +515,15 @@
       color: var(--muted);
       font-size: 12px;
       line-height: 2;
+    }
+
+    .feature-detail a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      text-underline-offset: 3px;
     }
 
     .daytrip {
@@ -684,8 +775,8 @@
         <h2 class="section-title">自然と日常が、<br>隣り合うまち。</h2>
       </div>
       <div class="intro-copy">
-        <p>千葉県北西部、東京湾に面した習志野市。津田沼駅周辺の活気ある街並みから少し足をのばすと、豊かな水辺や緑に出会えます。</p>
-        <p>渡り鳥が羽を休める谷津干潟、季節の花が咲く公園、地元で親しまれる味。遠くへ行かなくても、いつもの一日を少し特別にしてくれる場所です。</p>
+        <p>千葉県北西部、東京湾に面した習志野市。市内では旧石器時代から人々が暮らし、明治以降は軍の施設が置かれました。1954年に市制が始まり、現在は自然と暮らしが隣り合う文教住宅都市として発展しています。</p>
+        <p>ラムサール条約登録湿地の谷津干潟、約800種のバラが咲く谷津バラ園、広い芝生や水辺のある公園。ドイツとの歴史に由来するソーセージや、学校・地域に根づいた音楽文化も、この街ならではの魅力です。</p>
       </div>
     </section>
 
@@ -696,7 +787,7 @@
             <p class="section-label">FIND YOUR NARASHINO</p>
             <h2 class="section-title">この街で、出会うもの。</h2>
           </div>
-          <p>自然を感じる時間も、街の楽しみも。<br>習志野らしい風景をめぐってみませんか。</p>
+          <p>水辺や花、歴史、音楽、季節の催し。<br>公式情報もたどりながら、街の魅力を見つけてみませんか。</p>
         </div>
 
         <div class="feature-grid">
@@ -723,15 +814,16 @@
                 <img class="card-photo" src="https://donnatoko.jp/wp-content/uploads/2026/08/Yatsu-Higata-Nature-Observation-Center.jpg" alt="谷津干潟自然観察センター" loading="lazy">
               </span>
               <span class="card-copy">
-                <span class="card-number">02 / TOWN</span>
-                <span class="card-title" role="heading" aria-level="3">津田沼さんぽ</span>
-                <span class="card-description">駅前のショップやカフェをめぐりながら、街の暮らしにふれる時間。少し歩けば、落ち着いた公園や歴史ある神社にも出会えます。</span>
+                <span class="card-number">02 / WALK</span>
+                <span class="card-title" role="heading" aria-level="3">習志野さんぽ</span>
+                <span class="card-description">駅前のにぎわいから水辺や緑へ。谷津干潟の遊歩道や、谷津の街並みを歩いてみましょう。</span>
                 <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
               </span>
             </summary>
             <div class="feature-detail">
-              <h4>駅前から気ままに街歩き</h4>
-              <p>津田沼駅周辺には、買い物や食事を楽しめるお店が集まっています。駅前をめぐったあとは、少し足をのばして公園や神社へ。気になる場所に寄り道しながら、自分のペースで散歩を楽しめます。施設の営業時間などは訪問前にご確認ください。</p>
+              <h4>水辺と街をつなぐ散策</h4>
+              <p>谷津干潟の周囲には約3.5kmの遊歩道や観察デッキが整備されています。京成谷津駅から谷津遊路商店街を通り、谷津バラ園や干潟へ向かうのもおすすめ。潮の満ち引きや季節の花を楽しみながら歩けます。</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/shizen/index.html" target="_blank" rel="noopener noreferrer">習志野市の自然・散策情報 ↗</a>
             </div>
           </details>
           <details class="feature-card">
@@ -748,7 +840,88 @@
             </summary>
             <div class="feature-detail">
               <h4>ドイツとのつながりから生まれた味</h4>
-              <p>習志野ソーセージは、ドイツとの歴史的なつながりを背景に生まれた習志野市のご当地グルメです。市内のお店やイベントなどで出会えることがあります。販売場所や時期は異なるため、取扱店の最新情報をご確認ください。</p>
+              <p>約100年前、ドイツ式ソーセージの製法が習志野市内で伝えられた歴史にちなむご当地グルメです。当時のレシピを現代風に食べやすくアレンジし、地域団体商標として登録されています。販売場所や時期は取扱店の最新情報をご確認ください。</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/mesan/index.html" target="_blank" rel="noopener noreferrer">習志野市の名産情報 ↗</a>
+            </div>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-rose" role="img" aria-label="バラをイメージしたイラスト"></span>
+              <span class="card-copy">
+                <span class="card-number">04 / FLOWERS</span>
+                <span class="card-title" role="heading" aria-level="3">谷津バラ園</span>
+                <span class="card-description">世界各国のバラ約800種、7,500株が咲く庭園。春と秋、それぞれ違う表情の花を楽しめます。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>春と秋に楽しむバラの庭</h4>
+              <p>習志野市谷津3丁目にある約12,600平方メートルの庭園です。見頃は春が5月中旬〜6月中旬頃、秋が10月中旬〜11月中旬頃。開園期間・時間・入園料は季節によって変わるため、お出かけ前に公式情報をご確認ください。</p>
+              <a href="https://www.city.narashino.lg.jp/soshiki/koenryokuchi/gyomu/shisetu/koenshiseki/yaturose.html" target="_blank" rel="noopener noreferrer">習志野市・谷津バラ園の案内 ↗</a>
+            </div>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-park" role="img" aria-label="緑豊かな公園をイメージしたイラスト"></span>
+              <span class="card-copy">
+                <span class="card-number">05 / PARK</span>
+                <span class="card-title" role="heading" aria-level="3">香澄公園</span>
+                <span class="card-description">芝生や樹林、水辺が広がる公園。ピクニックや遊具遊びなど、ゆったり過ごせます。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>芝生と水辺でひと休み</h4>
+              <p>香澄3〜6丁目に広がる約9.5ヘクタールの公園です。芝生広場や遊具、菖蒲池、季節限定のじゃぶじゃぶ池があり、野外炉でのバーベキューは事前申込みが必要です。利用ルールや開放状況は公式案内をご確認ください。</p>
+              <a href="https://www.city.narashino.lg.jp/soshiki/koenryokuchi/gyomu/shisetu/koenshiseki/kasumikoen.html" target="_blank" rel="noopener noreferrer">習志野市・香澄公園の案内 ↗</a>
+            </div>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-history" role="img" aria-label="歴史を伝える記念碑をイメージしたイラスト"></span>
+              <span class="card-copy">
+                <span class="card-number">06 / HISTORY</span>
+                <span class="card-title" role="heading" aria-level="3">巨人軍発祥の地</span>
+                <span class="card-description">谷津公園には、読売巨人軍の誕生につながる谷津球場の歴史を伝える記念碑があります。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>谷津球場から始まる野球の物語</h4>
+              <p>1934年、第2回日米野球に向けた全日本チームが谷津球場で練習しました。そのチームを母体に日本初のプロ野球球団が結成され、後の読売巨人軍へとつながります。記念碑は谷津公園の谷津バラ園近くにあります。</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/kanko/bunkahistory/rekishi/Yomiuri_Giants_birthplace.html" target="_blank" rel="noopener noreferrer">習志野市・読売巨人軍発祥の地 ↗</a>
+            </div>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-music" role="img" aria-label="音符をイメージしたイラスト"></span>
+              <span class="card-copy">
+                <span class="card-number">07 / MUSIC</span>
+                <span class="card-title" role="heading" aria-level="3">音楽のまち</span>
+                <span class="card-description">学校や地域で音楽活動が盛ん。コンサートや発表会など、街のあちこちで音に出会えます。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>世代をこえて受け継ぐ音楽文化</h4>
+              <p>市内の学校や地域団体が音楽活動に取り組み、管弦楽・吹奏楽・合唱などの演奏会が開かれています。年末には市民が参加する習志野第九演奏会も行われます。開催情報は年度ごとの案内をご確認ください。</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/ongaku_sports/musictown.html" target="_blank" rel="noopener noreferrer">習志野市・音楽のまちの紹介 ↗</a>
+            </div>
+          </details>
+          <details class="feature-card">
+            <summary class="feature-summary">
+              <span class="card-art art-festival" role="img" aria-label="祭りのにぎわいをイメージしたイラスト"></span>
+              <span class="card-copy">
+                <span class="card-number">08 / FESTIVAL</span>
+                <span class="card-title" role="heading" aria-level="3">祭りと季節の催し</span>
+                <span class="card-description">市民まつり「習志野きらっと」や、地域で受け継がれる伝統行事も街の楽しみです。</span>
+                <span class="detail-action"><span class="detail-closed">詳しく見る ＋</span><span class="detail-open">閉じる −</span></span>
+              </span>
+            </summary>
+            <div class="feature-detail">
+              <h4>地域に受け継がれる祭り</h4>
+              <p>市民まつり「習志野きらっと」では、グルメやステージ、パレードなどが催されます。また、千葉県指定無形民俗文化財「下総三山の七年祭り」など、地域に伝わる行事もあります。開催時期や内容は年によって異なります。</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/kanko/maturi/index.html" target="_blank" rel="noopener noreferrer">習志野市・祭りの案内 ↗</a>
             </div>
           </details>
         </div>
@@ -787,8 +960,8 @@
         </div>
         <div class="route-stop">
           <span class="route-time">AFTERNOON</span>
-          <strong>公園や神社へ寄り道</strong>
-          <p>緑の中で、ゆっくり深呼吸。</p>
+          <strong>谷津バラ園・谷津公園へ</strong>
+          <p>季節の花と、巨人軍発祥の地の記念碑を訪ねて。</p>
         </div>
       </div>
     </section>
