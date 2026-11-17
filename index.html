@@ -622,6 +622,63 @@
       line-height: 1.8;
     }
 
+    .shop-recommendations {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(24, 51, 66, .12);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .shop-recommendations summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--green);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    .shop-recommendations summary::-webkit-details-marker { display: none; }
+    .shop-recommendations summary::after { content: "+"; font-size: 16px; }
+    .shop-recommendations[open] summary::after { content: "−"; }
+
+    .shop-recommendations[open] summary {
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(24, 51, 66, .1);
+    }
+
+    .shop-item { padding-top: 10px; }
+
+    .shop-item + .shop-item {
+      margin-top: 10px;
+      border-top: 1px solid rgba(24, 51, 66, .08);
+    }
+
+    .shop-item h4 {
+      margin: 0 0 4px;
+      font-family: var(--serif);
+      font-size: 14px;
+    }
+
+    .shop-item p {
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .shop-item a {
+      margin-right: 10px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
     .restaurant-menu summary {
       width: fit-content;
       color: var(--ink);
@@ -1010,6 +1067,22 @@
           <span class="route-time">09:30 · START</span>
           <strong>京成谷津駅から出発</strong>
           <p>まずは谷津遊路商店街をのぞきながら、谷津公園・谷津バラ園方面へ。商店街で飲み物を買っておくと、散策中の休憩にも便利です。</p>
+          <details class="shop-recommendations">
+            <summary>谷津エリアのおすすめ店を見る</summary>
+            <div class="shop-item">
+              <h4>菓匠 あかね家</h4>
+              <p>「谷津のばら」「谷津の散歩道」など、街の名前にちなんだ和菓子が楽しめます。谷津4丁目6-33／電話 047-451-2277</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/mesan/furusatosanpin/akaneya.html" target="_blank" rel="noopener noreferrer">市公式の紹介 ↗</a>
+              <a href="https://www.google.co.jp/maps/place/%EF%BC%88%E6%A0%AA%EF%BC%89%E8%8F%93%E5%8C%A0%E3%81%82%E3%81%8B%E3%81%AD%E5%AE%B6/@35.6846089,140.0059256,18z/data=!4m5!3m4!1s0x60187f91b0abf267:0x4f7fc25a0ed30f33!8m2!3d35.683882!4d140.0069768?hl=ja" target="_blank" rel="noopener noreferrer">地図 ↗</a>
+            </div>
+            <div class="shop-item">
+              <h4>菓子工房 金のうさぎ</h4>
+              <p>谷津マドレーヌが習志野市のふるさと産品に選ばれています。谷津4丁目6-28／電話 047-454-1102</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/mesan/furusatosanpin/kinnousagi.html" target="_blank" rel="noopener noreferrer">市公式の紹介 ↗</a>
+              <a href="https://www.google.co.jp/maps/place/%E9%87%91%E3%81%AE%E3%81%86%E3%81%95%E3%81%8E/@35.6847756,140.0067936,19z/data=!4m5!3m4!1s0x60187f91c0876e11:0x94c9718e5fc7a156!8m2!3d35.6844092!4d140.0072819?hl=ja" target="_blank" rel="noopener noreferrer">地図 ↗</a>
+            </div>
+            <p>営業時間や商品の在庫は変わることがあるため、来店前に各店へご確認ください。</p>
+          </details>
         </div>
         <div class="route-stop">
           <span class="route-time">10:00 · GARDEN</span>
@@ -1046,6 +1119,16 @@
           <span class="route-time">15:00 · TOWN WALK</span>
           <strong>津田沼の街で寄り道</strong>
           <p>食後は駅周辺を気ままに散策。気になるお店やカフェを見つけたらひと休みして、夕方は京成津田沼駅・JR津田沼駅のどちらから帰るか、帰路に合わせて選びましょう。</p>
+          <details class="shop-recommendations">
+            <summary>津田沼で地元のお菓子を探す</summary>
+            <div class="shop-item">
+              <h4>創菓旬彩 新月</h4>
+              <p>小豆餡を包んだ習志野銘菓「新月」など、地元ゆかりのお菓子を販売。津田沼6丁目2-3／電話 047-451-1618</p>
+              <a href="https://www.city.narashino.lg.jp/citypromotion/mesan/furusatosanpin/singetu.html" target="_blank" rel="noopener noreferrer">市公式の紹介 ↗</a>
+              <a href="https://www.google.co.jp/maps/place/%E6%96%B0%E6%9C%88%E8%8F%93%E5%AD%90%E5%BA%97/@35.6760904,140.0213642,18z/data=!4m5!3m4!1s0x602281d48bad9791:0x55e556343311f612!8m2!3d35.6759601!4d140.0228112?hl=ja" target="_blank" rel="noopener noreferrer">地図 ↗</a>
+            </div>
+            <p>立ち寄り先の営業時間・定休日を確認してからお出かけください。</p>
+          </details>
         </div>
         <p class="route-footnote">※所要時間は目安です。谷津バラ園の開園日や観察センターの開館時間、飲食店の営業状況を確認してからお出かけください。天候や潮位に合わせて、散策の順番や滞在時間を調整してください。</p>
       </div>
