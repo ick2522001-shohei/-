@@ -564,12 +564,12 @@
       padding-bottom: 28px;
     }
 
-    .route-stop:not(:last-child) {
+    .route-stop:not(:last-of-type) {
       margin-bottom: 24px;
       border-bottom: 1px solid rgba(24, 51, 66, .1);
     }
 
-    .route-stop:last-child { padding-bottom: 0; }
+    .route-stop:last-of-type { padding-bottom: 0; }
 
     .route-stop::before {
       position: absolute;
@@ -611,6 +611,15 @@
     .route-stop a {
       color: var(--green);
       text-underline-offset: 3px;
+    }
+
+    .route-footnote {
+      margin: 8px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(24, 51, 66, .1);
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
     }
 
     .restaurant-menu summary {
@@ -993,17 +1002,31 @@
       <div class="daytrip-copy">
         <p class="section-label">A DAY IN NARASHINO</p>
         <h2 class="section-title">のんびり、<br>習志野を歩く一日。</h2>
-        <p>朝は水辺の空気を吸い込んで、お昼は街へ。気になるお店を見つけたら寄り道して、帰り道には今日の景色を思い出す。そんな気ままな過ごし方がおすすめです。</p>
+        <p>午前は京成谷津駅から商店街、公園、谷津干潟へ。午後は津田沼へ移動して、STEAK TEXASのランチと街歩きを楽しむコースです。時間は目安なので、花や野鳥を眺めながらゆっくり寄り道してください。</p>
         <a class="text-link" href="#spots">見どころをチェック <span aria-hidden="true">→</span></a>
       </div>
       <div class="route" aria-label="習志野での一日の過ごし方">
         <div class="route-stop">
-          <span class="route-time">MORNING</span>
-          <strong>谷津干潟で自然観察</strong>
-          <p>潮の香りと鳥の声に耳をすませて。</p>
+          <span class="route-time">09:30 · START</span>
+          <strong>京成谷津駅から出発</strong>
+          <p>まずは谷津遊路商店街をのぞきながら、谷津公園・谷津バラ園方面へ。商店街で飲み物を買っておくと、散策中の休憩にも便利です。</p>
         </div>
         <div class="route-stop">
-          <span class="route-time">NOON</span>
+          <span class="route-time">10:00 · GARDEN</span>
+          <strong>谷津バラ園と谷津公園</strong>
+          <p>季節のバラを楽しみ、谷津公園では読売巨人軍発祥の地の記念碑を訪ねます。バラ園は開園期間・時間が季節で変わるため、事前に公式情報をご確認ください。</p>
+          <p><a href="https://www.city.narashino.lg.jp/soshiki/koenryokuchi/gyomu/shisetu/koenshiseki/yaturose.html" target="_blank" rel="noopener noreferrer">谷津バラ園の開園情報 ↗</a></p>
+        </div>
+        <div class="route-stop">
+          <span class="route-time">11:00 · WETLAND</span>
+          <strong>谷津干潟をゆっくり一周</strong>
+          <p>自然観察センターを起点に、遊歩道や観察デッキから水辺を眺めます。遊歩道は約3.5km。野鳥観察や写真撮影を楽しむなら、1.5〜2時間ほど余裕を持つのがおすすめです。</p>
+          <p>潮の満ち引きや季節によって見られる景色が変わります。センターの開館情報もお出かけ前にご確認ください。</p>
+          <p><a href="https://www.city.narashino.lg.jp/citypromotion/shizen/index.html" target="_blank" rel="noopener noreferrer">習志野市の自然・散策情報 ↗</a><br>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B0%B7%E6%B4%A5%E5%B9%B2%E6%BD%9F%E8%87%AA%E7%84%B6%E8%A6%B3%E5%AF%9F%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC" target="_blank" rel="noopener noreferrer">自然観察センターの地図 ↗</a></p>
+        </div>
+        <div class="route-stop">
+          <span class="route-time">13:30 · LUNCH</span>
           <details class="restaurant-menu">
             <summary>STEAK TEXASでランチ</summary>
             <img class="restaurant-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbLsiNQ7qo2I5OF5duRyT33QX9aFUnHV98XWX4J-N4CJUO-AC94nKThmA&amp;s=10" alt="STEAK TEXASの料理" loading="lazy">
@@ -1013,17 +1036,18 @@
             </ul>
             <p>メニューや提供状況は店舗でご確認ください。</p>
           </details>
-          <p>ステーキを楽しんだら、津田沼の街を散策。</p>
+          <p>谷津エリアから京成津田沼駅方面へ移動して、ゆっくりランチ。</p>
           <p>住所：〒275-0016 千葉県習志野市津田沼2-6-34<br>
             京成津田沼駅 北口から徒歩約6分<br>
             電話：<a href="tel:0474779917">047-477-9917</a><br>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%86%E3%82%AD%E3%82%B5%E3%82%B9%20%E6%B4%A5%E7%94%B0%E6%B2%BC%E5%BA%97%20%E7%BF%92%E5%BF%97%E9%87%8E%E5%B8%82%E6%B4%A5%E7%94%B0%E6%B2%BC2-6-34" target="_blank" rel="noopener noreferrer">地図を見る ↗</a></p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%86%E3%82%AD%E3%82%B5%E3%82%B9%20%E6%B4%A5%E7%94%B0%E6%B2%BC%E5%BA%97%20%E7%BF%92%E5%BF%97%E9%87%8E%E5%B8%82%E6%B4%A5%E7%94%B0%E6%B2%BC2-6-34" target="_blank" rel="noopener noreferrer">STEAK TEXASの地図 ↗</a></p>
         </div>
         <div class="route-stop">
-          <span class="route-time">AFTERNOON</span>
-          <strong>谷津バラ園・谷津公園へ</strong>
-          <p>季節の花と、巨人軍発祥の地の記念碑を訪ねて。</p>
+          <span class="route-time">15:00 · TOWN WALK</span>
+          <strong>津田沼の街で寄り道</strong>
+          <p>食後は駅周辺を気ままに散策。気になるお店やカフェを見つけたらひと休みして、夕方は京成津田沼駅・JR津田沼駅のどちらから帰るか、帰路に合わせて選びましょう。</p>
         </div>
+        <p class="route-footnote">※所要時間は目安です。谷津バラ園の開園日や観察センターの開館時間、飲食店の営業状況を確認してからお出かけください。天候や潮位に合わせて、散策の順番や滞在時間を調整してください。</p>
       </div>
     </section>
 
